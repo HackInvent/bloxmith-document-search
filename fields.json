@@ -1,0 +1,64 @@
+[
+  {
+    "key": "corpus",
+    "type": "text",
+    "help": "Independent local corpus in this block's persistent storage. Inputs cannot select another corpus."
+  },
+  {
+    "key": "match_mode",
+    "type": "select",
+    "options": [
+      "all_terms",
+      "any_term",
+      "phrase"
+    ],
+    "help": "Literal text search: all words, any word, or a consecutive phrase. No raw query language or semantic model."
+  },
+  {
+    "key": "max_results",
+    "type": "integer",
+    "min": 1,
+    "max": 100,
+    "help": "Maximum returned excerpts. Scores rank this query; they are not confidence probabilities."
+  },
+  {
+    "key": "max_documents",
+    "type": "integer",
+    "min": 1,
+    "max": 10000,
+    "advanced": true,
+    "help": "Maximum retained identities, including removal tombstones that protect against stale revisions. No automatic eviction."
+  },
+  {
+    "key": "max_sections",
+    "type": "integer",
+    "min": 1,
+    "max": 50000,
+    "advanced": true,
+    "help": "Maximum indexed sections in this corpus."
+  },
+  {
+    "key": "max_characters",
+    "type": "integer",
+    "min": 1024,
+    "max": 20000000,
+    "advanced": true,
+    "help": "Total stored text character limit. A batch is accepted or rejected atomically."
+  },
+  {
+    "key": "max_input_bytes",
+    "type": "integer",
+    "min": 1024,
+    "max": 4194304,
+    "advanced": true,
+    "help": "Maximum UTF-8 bytes per input event."
+  },
+  {
+    "key": "timeout_sec",
+    "type": "integer",
+    "min": 1,
+    "max": 30,
+    "advanced": true,
+    "help": "One deadline per event, including a bounded database lock wait."
+  }
+]
